@@ -1,0 +1,16 @@
+{
+ "source": {
+  "kind": "file",
+  "ref": "assets/img/georgia-salakou-logo.svg"
+ },
+ "source_md5": "aabb3bb480c12579899cf0c8211d4e59",
+ "version": "64eadb4b",
+ "tile": "#F7F3EC",
+ "crop": null,
+ "header": [
+  "file",
+  "assets/img/georgia-salakou-logo.svg",
+  "aabb3bb480c12579899cf0c8211d4e59"
+ ],
+ "made": "2026-10-16"
+}
