@@ -1,0 +1,4 @@
+{
+ "_howto": "Κάθε άρθρο: {\"slug\",\"date\":\"YYYY-MM-DD\",\"cover\":\"articles/img/…webp\",\"category\":{\"el\",\"en\"},\"title\":{\"el\",\"en\"},\"excerpt\":{\"el\",\"en\"},\"body\":{\"el\":\"<p>…</p>\",\"en\":\"…\"},\"refs\":[\"Βιβλιογραφική αναφορά…\"]}",
+ "articles": []
+}
