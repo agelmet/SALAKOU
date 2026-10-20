@@ -156,7 +156,7 @@ main{overflow-x:clip}
 .hg1{width:620px;height:620px;right:-6%;top:-10%;background:radial-gradient(circle,rgba(217,164,65,.42),transparent 66%);animation:wash 22s ease-in-out infinite alternate}
 .hg2{width:520px;height:520px;left:-12%;bottom:-24%;background:radial-gradient(circle,rgba(163,167,139,.38),transparent 66%);animation:wash 28s ease-in-out infinite alternate-reverse}
 .hgr{opacity:.9}
-.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,4vw,64px);align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
 .h-id{font:600 12.5px/1.6 var(--fb);letter-spacing:.15em;text-transform:uppercase;color:var(--terra-d);margin-bottom:min(22px,2.6svh)}
 .h-id span{color:var(--ink2);font-weight:500}
 .display{font-family:var(--fd);font-size:clamp(42px,min(5.5vw,9.4svh),84px);line-height:1.02;letter-spacing:-.018em;margin:0 0 28px;text-wrap:balance}
@@ -172,7 +172,7 @@ main{overflow-x:clip}
 .ready .hero .h-id{opacity:1;transform:none;transition-delay:.05s}
 .ready .hero .lead{opacity:1;transform:none;transition-delay:.75s}
 .ready .hero .cta{opacity:1;transform:none;transition-delay:.95s}
-.h-art{position:relative;width:min(100%,calc((100svh - 150px)*640/760));aspect-ratio:var(--ar);margin-inline:auto;--mx:0;--my:0}
+.h-art{position:relative;width:min(100%,calc((100svh - 172px)*640/760),640px);aspect-ratio:var(--ar);margin-inline:auto;--mx:0;--my:0}
 .h-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .ht{transform-box:fill-box;transform-origin:center}
 .ht path{transform-box:fill-box;transform-origin:center;translate:calc(var(--mx)*var(--z)*-18px) calc(var(--my)*var(--z)*-18px);transition:translate .9s var(--ease);filter:drop-shadow(0 6px 10px rgba(68,63,55,.12))}
@@ -180,7 +180,7 @@ main{overflow-x:clip}
 .ready .ht{opacity:1;transform:none}
 .lz{transform-box:fill-box;transform-origin:center;opacity:.85;animation:dsf 9s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-1.7s)}
 .h-ph{position:absolute;translate:calc(var(--mx)*8px) calc(var(--my)*8px);transition:translate .9s var(--ease);filter:drop-shadow(0 28px 34px rgba(158,78,42,.28)) drop-shadow(0 6px 10px rgba(68,63,55,.16))}
-.h-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;clip-path:url(#pc)}
+.h-ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;clip-path:url(#pc)}
 .js .h-ph{opacity:0;transform:scale(.9) rotate(-3deg);transition:opacity .9s ease .35s,transform 1.3s var(--bounce) .35s}
 .ready .h-ph{opacity:1;transform:none}
 .cue{position:absolute;left:50%;bottom:22px;width:24px;height:38px;margin-left:-12px;border-radius:14px;box-shadow:inset 0 0 0 1.5px rgba(68,63,55,.35);transition:opacity .5s}
@@ -287,6 +287,8 @@ main{overflow-x:clip}
 .rv-dots{display:flex;gap:7px}
 .rv-dots i{width:9px;height:7px;border-radius:2px 3px;background:rgba(68,63,55,.2);transition:background .3s,transform .3s}
 .rv-dots i.on{background:var(--terra);transform:scale(1.35) rotate(12deg)}
+.rv-track.g4{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-columns:auto;overflow:visible;scroll-snap-type:none;gap:24px}
+.rv-track.g4+.rv-nav{display:none}
 .rv-note{text-align:center;font-size:13px;color:var(--ink2);margin:18px 0 0}
 
 /* ---------- 8. «Ένας χώρος για τη δική σας ιστορία» ---------- */
@@ -545,7 +547,7 @@ main{overflow-x:clip}
  .brand b{font-size:20px}.brand .mk{width:36px;height:36px}
  .hero{padding:88px 0 52px;min-height:auto}
  .hero .wrap{grid-template-columns:1fr;gap:18px}
- .h-art{order:-1;width:min(92%,calc(52svh*640/760))}
+ .h-art{order:-1;width:min(100%,calc(60svh*640/760))}
  .display{font-size:clamp(40px,11vw,56px);margin-bottom:20px}
  .cue{display:none}
  .ib,.hsv,.story,.ap1,.ap3,.road,.svs,.arts{border-radius:34px 34px 0 0}
@@ -559,7 +561,8 @@ main{overflow-x:clip}
  .ss{opacity:1!important;transform:none!important}
  .svc-g{grid-template-columns:1fr}
  .svc-n{margin-bottom:30px}
- .rv-track{grid-auto-columns:86%;align-items:start}
+ .rv-track,.rv-track.g4{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:86%;align-items:start;overflow-x:auto;scroll-snap-type:x mandatory}
+ .rv-track.g4+.rv-nav{display:flex}
  .scores{grid-template-columns:1fr 1fr}
  .score{padding:14px;gap:10px}.sc-n{font-size:32px}
  .facts{grid-template-columns:1fr}
@@ -640,7 +643,7 @@ main{overflow-x:clip}
  <div class="sec-head c"><p class="kick"><span class="kt" aria-hidden="true"><i></i><i></i><i></i></span><span>At the core</span></p><h2 class="h2 lc " id="h-ap3">The importance of the therapeutic relationship</h2></div>
  <p class="ap3-q">At the core of the psychotherapeutic process lies the relationship between therapist and client — a relationship that develops gradually, through consistency, trust, respect and acceptance.</p>
  <ul class="vals" aria-label="The relationship is built on"><li style="--i:0;--c:#C46D43">consistency</li><li style="--i:1;--c:#D9A441">trust</li><li style="--i:2;--c:#A3A78B">respect</li><li style="--i:3;--c:#D98E66">acceptance</li></ul>
- <div class="ap3-g"><figure class="ap3-ph pola"><a class="lb" href="../assets/img/grafeio-psychotherapeias-ilisia-polythrona.webp" data-w="600" data-h="800" aria-label="The armchair of the psychotherapy office in Ilisia, under an ochre painting"><img src="../assets/img/grafeio-psychotherapeias-ilisia-polythrona.webp" width="600" height="800" loading="lazy" decoding="async" alt="The armchair of the psychotherapy office in Ilisia, under an ochre painting"></a></figure><div class="ap3-tx"><p class="ap-p" style="--i:0">Within a stable and confidential setting, the client can express thoughts and feelings, explore personal difficulties and approach experiences that may not have been easy to work through in the past.</p><p class="ap-p" style="--i:1">The therapeutic relationship is not merely the setting in which therapy takes place; it can itself become a space for understanding, recognising and working through relational patterns.</p><p class="ap-p" style="--i:2">Every therapeutic journey takes shape through collaboration and respect for each person’s own pace, needs and possibilities.</p></div></div>
+ <div class="ap3-g"><figure class="ap3-ph pola"><a class="lb" href="../assets/img/grafeio-psychotherapeias-ilisia-gonia-900.webp" data-w="900" data-h="1200" aria-label="The session corner of the psychotherapy office in Ilisia, with an armchair, bookcase and paintings"><img src="../assets/img/grafeio-psychotherapeias-ilisia-gonia-900.webp" srcset="../assets/img/grafeio-psychotherapeias-ilisia-gonia-600.webp 600w, ../assets/img/grafeio-psychotherapeias-ilisia-gonia-900.webp 900w, ../assets/img/grafeio-psychotherapeias-ilisia-gonia-1200.webp 1200w" sizes="(max-width:860px) 80vw, 34vw" width="900" height="1200" loading="lazy" decoding="async" alt="The session corner of the psychotherapy office in Ilisia, with an armchair, bookcase and paintings"></a></figure><div class="ap3-tx"><p class="ap-p" style="--i:0">Within a stable and confidential setting, the client can express thoughts and feelings, explore personal difficulties and approach experiences that may not have been easy to work through in the past.</p><p class="ap-p" style="--i:1">The therapeutic relationship is not merely the setting in which therapy takes place; it can itself become a space for understanding, recognising and working through relational patterns.</p><p class="ap-p" style="--i:2">Every therapeutic journey takes shape through collaboration and respect for each person’s own pace, needs and possibilities.</p></div></div>
 </div></section>
 <section class="story" aria-labelledby="h-story"><div class="amb amb-wash" aria-hidden="true"><i class="wa"></i><i class="wb"></i></div><div class="wrap">
  <div class="st-tx"><p class="kick"><span class="kt" aria-hidden="true"><i></i><i></i><i></i></span><span>The first step</span></p><h2 class="h2 lc " id="h-story">A space for your own story</h2>
